@@ -86,9 +86,9 @@ function Profile() {
                   getProfileData?.profilePicture
                 }`}
               />
-              <Upload className="mx-auto" {...uploadProps}>
+              {/* <Upload className="mx-auto" {...uploadProps}>
                 <Button icon={<UploadOutlined />}>Click to Upload</Button>
-              </Upload>
+              </Upload> */}
             </div>
 
             <div className="text-center mt-4">
