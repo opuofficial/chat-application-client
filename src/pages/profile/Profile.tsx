@@ -7,7 +7,7 @@ import {
 } from "../../services/profileApi";
 import { useEffect, useState } from "react";
 import Loader from "../../components/common/Loader";
-import { RcFile, UploadFileStatus } from "antd/es/upload/interface";
+import { RcFile } from "antd/es/upload/interface";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { updateProfilePicture } from "../../store/authSlice";
