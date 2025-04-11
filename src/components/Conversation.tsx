@@ -98,7 +98,7 @@ function Conversation() {
       dispatch(
         updateLastMessage({
           _id: message.conversationId,
-          lastMessage: message.text,
+          lastMessage: message,
         })
       );
 
