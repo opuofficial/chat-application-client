@@ -12,6 +12,7 @@ import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { updateProfilePicture } from "../../store/authSlice";
 import { UploadOutlined } from "@ant-design/icons";
+import { UploadFile } from "antd/es/upload/interface";
 
 function Profile() {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ function Profile() {
 
   const [uploadProfilePicture, { data: uploadData }] =
     useUploadProfilePictureMutation();
-  const [fileList, setFileList] = useState<UploadFileStatus[]>([]);
+  const [fileList, setFileList] = useState<UploadFile[]>([]);
 
   useEffect(() => {
     if (isGetProfileDataError) {
@@ -63,11 +64,11 @@ function Profile() {
 
   const uploadProps = {
     customRequest: handleUpload,
-    listType: "picture",
+    listType: "picture" as const, // Use 'as const' for literal types
     maxCount: 1,
     fileList,
-    onChange: () => {
-      setFileList(fileList);
+    onChange: ({ fileList: newFileList }: { fileList: UploadFile[] }) => {
+      setFileList(newFileList);
     },
   };
 
