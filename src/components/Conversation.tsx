@@ -17,10 +17,10 @@ import { updateLastMessage } from "../store/conversationsSlice";
 function Conversation() {
   const { recipientId } = useParams();
   const dispatch = useDispatch();
-  const recipient = useSelector((state) => state.recipient);
-  const inbox = useSelector((state) => state.inbox);
+  const recipient = useSelector((state: any) => state.recipient);
+  const inbox = useSelector((state: any) => state.inbox);
   const [messageInput, setMessageInput] = useState("");
-  const messageContainerRef = useRef(null);
+  const messageContainerRef = useRef<HTMLDivElement | null>(null);
 
   const {
     data: recipientData,
@@ -68,6 +68,8 @@ function Conversation() {
 
   useEffect(() => {
     socket.on("userStatusChanged", ({ userId, isOnline }) => {
+      console.log(userId);
+
       dispatch(updateActiveStatus({ isOnline }));
     });
 
@@ -77,10 +79,12 @@ function Conversation() {
   }, []);
 
   const scrollToBottom = () => {
-    messageContainerRef?.current.scrollTo({
-      top: messageContainerRef?.current.scrollHeight + 150,
-      behavior: "smooth",
-    });
+    if (messageContainerRef.current) {
+      messageContainerRef?.current.scrollTo({
+        top: messageContainerRef?.current.scrollHeight + 150,
+        behavior: "smooth",
+      });
+    }
   };
 
   useEffect(() => {
@@ -156,7 +160,7 @@ function Conversation() {
 }
 
 function Messages({ inbox }: { inbox: MessageType[] }) {
-  const auth = useSelector((state) => state.auth);
+  const auth = useSelector((state: any) => state.auth);
 
   return (
     <div className="p-2">

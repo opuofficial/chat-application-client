@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AuthLayout from "../../layouts/AuthLayout";
 import { Button, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";

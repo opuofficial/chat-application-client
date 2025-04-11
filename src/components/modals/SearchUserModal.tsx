@@ -1,4 +1,4 @@
-import { Avatar, Input, Space } from "antd";
+import { Input } from "antd";
 import { ModalProps } from "../../types/modal";
 import CustomModal from "../common/CustomModal";
 import Loader from "../common/Loader";

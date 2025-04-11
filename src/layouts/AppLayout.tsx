@@ -1,5 +1,5 @@
-import { ReactNode, useEffect, useState } from "react";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { ReactNode } from "react";
+import { Helmet } from "react-helmet-async";
 
 type AppLayoutProps = {
   title: string;

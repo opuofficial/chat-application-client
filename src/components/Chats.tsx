@@ -13,7 +13,7 @@ function Chats() {
   const { data: conversationsData } = useGetConversationsQuery({});
   const dispatch = useDispatch();
   const conversations = useSelector((state) => (state as any).conversations);
-  const auth = useSelector((state) => state.auth);
+  const auth = useSelector((state: any) => state.auth);
 
   useEffect(() => {
     socket.on("userStatusChanged", ({ userId, isOnline }) => {

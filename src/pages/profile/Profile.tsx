@@ -1,7 +1,6 @@
 import { Button, Image, Upload } from "antd";
 import Navbar from "../../components/common/Navbar";
 import Container from "../../components/common/Container";
-import { UploadOutlined } from "@ant-design/icons";
 import {
   useGetProfileDataQuery,
   useUploadProfilePictureMutation,
@@ -12,6 +11,7 @@ import { RcFile, UploadFileStatus } from "antd/es/upload/interface";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { updateProfilePicture } from "../../store/authSlice";
+import { UploadOutlined } from "@ant-design/icons";
 
 function Profile() {
   const dispatch = useDispatch();
@@ -86,9 +86,9 @@ function Profile() {
                   getProfileData?.profilePicture
                 }`}
               />
-              {/* <Upload className="mx-auto" {...uploadProps}>
+              <Upload className="mx-auto" {...uploadProps}>
                 <Button icon={<UploadOutlined />}>Click to Upload</Button>
-              </Upload> */}
+              </Upload>
             </div>
 
             <div className="text-center mt-4">

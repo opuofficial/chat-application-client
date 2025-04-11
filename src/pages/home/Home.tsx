@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import MainLayout from "../../layouts/MainLayout";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { socket } from "../../App";
 
 function Home() {

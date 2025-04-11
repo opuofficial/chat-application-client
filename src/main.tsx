@@ -8,10 +8,10 @@ import { store } from "./store/store";
 
 createRoot(document.getElementById("root")!).render(
   <HelmetProvider>
-    {/* <StrictMode> */}
-    <Provider store={store}>
-      <App />
-    </Provider>
-    {/* </StrictMode> */}
+    <StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </StrictMode>
   </HelmetProvider>
 );

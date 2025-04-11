@@ -5,8 +5,6 @@ import { ConfigProvider } from "antd";
 import { Toaster } from "react-hot-toast";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import { io } from "socket.io-client";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
 
 const theme = {
   token: {
